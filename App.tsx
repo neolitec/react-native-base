@@ -9,7 +9,9 @@
  */
 
 import React from 'react';
-import { NavigationContainer } from '@react-navigation/native';
+import { NavigationContainer, useNavigation } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+
 import {
   SafeAreaView,
   StyleSheet,
@@ -17,13 +19,13 @@ import {
   View,
   Text,
   StatusBar,
+  Button,
 } from 'react-native';
 
 import {
   Header,
   LearnMoreLinks,
   Colors,
-  DebugInstructions,
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
 
@@ -68,11 +70,11 @@ const styles = StyleSheet.create({
   },
 });
 
+function HomeScreen() {
+  const navigation = useNavigation();
 
-
-export default function App() {
   return (
-    <NavigationContainer>
+    <>
       <StatusBar barStyle="dark-content" />
       <SafeAreaView>
         <ScrollView
@@ -86,11 +88,10 @@ export default function App() {
           )}
           <View style={styles.body}>
             <View style={styles.sectionContainer}>
-              <Text style={styles.sectionTitle}>Step One</Text>
-              <Text style={styles.sectionDescription}>
-                Edit <Text style={styles.highlight}>App.tsx</Text> to change
-                this screen and then come back to see your edits.
-              </Text>
+            <Button
+              title="Go to Details"
+              onPress={() => navigation.navigate('Details')}
+            />
             </View>
             <View style={styles.sectionContainer}>
               <Text style={styles.sectionTitle}>See Your Changes</Text>
@@ -98,22 +99,36 @@ export default function App() {
                 <ReloadInstructions />
               </Text>
             </View>
-            <View style={styles.sectionContainer}>
-              <Text style={styles.sectionTitle}>Debug</Text>
-              <Text style={styles.sectionDescription}>
-                <DebugInstructions />
-              </Text>
-            </View>
-            <View style={styles.sectionContainer}>
-              <Text style={styles.sectionTitle}>Learn More</Text>
-              <Text style={styles.sectionDescription}>
-                Read the docs to discover what to do next:
-              </Text>
-            </View>
             <LearnMoreLinks />
           </View>
         </ScrollView>
       </SafeAreaView>
+    </>
+  );
+}
+
+function DetailsScreen() {
+  return (
+    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+      <Text>Details Screen</Text>
+    </View>
+  );
+}
+
+const Stack = createStackNavigator();
+
+function App() {
+  return (
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen name="Home"
+          component={HomeScreen}
+          options={{ title: 'Overview' }}
+        />
+        <Stack.Screen name="Details" component={DetailsScreen} />
+      </Stack.Navigator>
     </NavigationContainer>
   );
 }
+
+export default App;
