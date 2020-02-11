@@ -4,12 +4,16 @@
   "private": true,
   "scripts": {
     "android": "react-native run-android",
+    "clean-all": "watchman watch-del-all && rm -rf node_modules/ && npm cache clean --force && npm install",
     "ios": "react-native run-ios",
-    "start": "react-native start",
-    "test": "jest",
     "lint": "eslint \"./{src,__tests__}/**/*.{ts,tsx}\"",
-    "precommit": "tsc --skipLibCheck && lint-staged",
-    "clean-all": "watchman watch-del-all && rm -rf node_modules/ && npm cache clean --force && npm install"
+    "start": "react-native start",
+    "test": "jest"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
   },
   "lint-staged": {
     "package.json": [
@@ -20,6 +24,17 @@
       "eslint --fix",
       "git add"
     ]
+  },
+  "jest": {
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "jsx",
+      "json",
+      "node"
+    ],
+    "preset": "react-native"
   },
   "dependencies": {
     "@react-native-community/masked-view": "^0.1.6",
@@ -59,16 +74,5 @@
     "react-test-renderer": "16.9.0",
     "sort-package-json": "^1.39.1",
     "typescript": "^3.7.3"
-  },
-  "jest": {
-    "preset": "react-native",
-    "moduleFileExtensions": [
-      "ts",
-      "tsx",
-      "js",
-      "jsx",
-      "json",
-      "node"
-    ]
   }
 }
