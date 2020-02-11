@@ -1,3 +1,5 @@
+yarn.lock
+
 # OSX
 #
 .DS_Store
@@ -32,7 +34,7 @@ local.properties
 
 # Visual Studio Code
 #
-.vscode/
+#.vscode/
 
 # node.js
 #
