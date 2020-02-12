@@ -19,6 +19,7 @@ import {
 import { StackNavigationProp } from '@react-navigation/stack';
 import { metrics, colors } from '../shared/theme';
 
+// Criss tabarnak c'est quoi ce truuuc...
 const styles = StyleSheet.create({
   scrollView: {
     backgroundColor: colors.transparent,

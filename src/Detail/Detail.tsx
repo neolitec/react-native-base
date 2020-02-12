@@ -1,35 +1,33 @@
 import React from 'react';
-import { View, Text, StyleSheet } from 'react-native';
-import { TextInput } from 'react-native-gesture-handler';
 import { observer } from 'mobx-react-lite';
+import styled from 'styled-components/native';
+
+import { Text } from 'react-native';
 import { useRootStore } from '../shared/store';
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  textInput: {
-    borderWidth: 1,
-    borderColor: '#000',
-    paddingHorizontal: 10,
-    paddingVertical: 0,
-  },
-});
+const Page = styled.View`
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+`;
+
+const Input = styled.TextInput`
+  border-width: 1px;
+  border-color: #000;
+  padding: 0 10px;
+`;
 
 export const DetailScreen = observer(() => {
   const rootStore = useRootStore();
 
   return (
-    <View style={styles.container}>
+    <Page>
       <Text>Detail Screen</Text>
-      <TextInput
-        style={styles.textInput}
+      <Input
         placeholder="Type your name"
-        onChangeText={value => rootStore.setName(value)}
+        onChangeText={(value: string) => rootStore.setName(value)}
       />
       {!!rootStore.name && <Text>Hello, {rootStore.name}!</Text>}
-    </View>
+    </Page>
   );
 });
