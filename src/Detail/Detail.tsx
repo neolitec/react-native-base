@@ -1,8 +1,8 @@
 import React from 'react';
-import {View, Text, StyleSheet} from 'react-native';
-import {TextInput} from 'react-native-gesture-handler';
-import {observer} from 'mobx-react-lite';
-import {useRootStore} from '../shared/store';
+import { View, Text, StyleSheet } from 'react-native';
+import { TextInput } from 'react-native-gesture-handler';
+import { observer } from 'mobx-react-lite';
+import { useRootStore } from '../shared/store';
 
 const styles = StyleSheet.create({
   container: {

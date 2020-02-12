@@ -1,5 +1,5 @@
 import React from 'react';
-import {useNavigation} from '@react-navigation/native';
+import { useNavigation } from '@react-navigation/native';
 
 import {
   SafeAreaView,
@@ -14,36 +14,36 @@ import {
 import {
   Header,
   LearnMoreLinks,
-  Colors,
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
-import {StackNavigationProp} from '@react-navigation/stack';
+import { StackNavigationProp } from '@react-navigation/stack';
+import { metrics, colors } from '../shared/theme';
 
 const styles = StyleSheet.create({
   scrollView: {
-    backgroundColor: Colors.lighter,
+    backgroundColor: colors.transparent,
   },
   body: {
-    backgroundColor: Colors.white,
+    backgroundColor: colors.primary,
   },
   sectionContainer: {
-    marginTop: 32,
-    paddingHorizontal: 24,
+    marginTop: metrics.xlargeMargin,
+    paddingHorizontal: metrics.largerMargin,
   },
   sectionTitle: {
     fontSize: 24,
     fontWeight: '600',
-    color: Colors.black,
+    color: colors.darkPrimary,
   },
   sectionDescription: {
-    marginTop: 8,
+    marginTop: metrics.smallerMargin,
     fontSize: 18,
     fontWeight: '400',
-    color: Colors.dark,
+    color: colors.secondary,
   },
 });
 
-type StackParamList = {Detail: undefined};
+type StackParamList = { Detail: undefined };
 type HomeScreenNavigationProp = StackNavigationProp<StackParamList>;
 
 export function HomeScreen() {

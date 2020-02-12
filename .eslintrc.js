@@ -32,6 +32,7 @@ module.exports = {
     'no-plusplus': 'off',
     'import/prefer-default-export': 'off',
     'class-methods-use-this': 'off',
+    'object-curly-spacing': 'error',
 
     // TypeScript
     '@typescript-eslint/camelcase': 'off',
@@ -44,7 +45,7 @@ module.exports = {
     '@typescript-eslint/no-empty-function': 'off',
 
     // React
-    'react/jsx-filename-extension': ['error', {extensions: ['.tsx']}],
+    'react/jsx-filename-extension': ['error', { extensions: ['.tsx'] }],
     'react/prop-types': ['off', {}],
     'react/jsx-props-no-spreading': 'warn',
 

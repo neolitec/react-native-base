@@ -1,8 +1,8 @@
 import React from 'react';
-import {NavigationContainer} from '@react-navigation/native';
-import {createStackNavigator} from '@react-navigation/stack';
-import {HomeScreen} from '../Home/Home';
-import {DetailScreen} from '../Detail/Detail';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+import { HomeScreen } from '../Home/Home';
+import { DetailScreen } from '../Detail/Detail';
 
 const Stack = createStackNavigator();
 
@@ -13,7 +13,7 @@ function AppNavigator() {
         <Stack.Screen
           name="Home"
           component={HomeScreen}
-          options={{title: 'Overview'}}
+          options={{ title: 'Overview' }}
         />
         <Stack.Screen name="Detail" component={DetailScreen} />
       </Stack.Navigator>
