@@ -7,3 +7,4 @@
 - [ ] Styles (styled-components)
 - [ ] Web engine choice (Hermes beta?)
 - [ ] Icon and splashscreen generation
+- [ ] Custom font
