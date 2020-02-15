@@ -15,6 +15,7 @@ const Input = styled.TextInput`
   border-width: 1px;
   border-color: #000;
   padding: 0 10px;
+  width: 80%;
 `;
 
 export const DetailScreen = observer(() => {
@@ -24,10 +25,31 @@ export const DetailScreen = observer(() => {
     <Page>
       <Text>Detail Screen</Text>
       <Input
-        placeholder="Type your name"
-        onChangeText={(value: string) => rootStore.setName(value)}
+        placeholder="Firstname"
+        onChangeText={(value: string) => rootStore.setFirstname(value)}
       />
-      {!!rootStore.name && <Text>Hello, {rootStore.name}!</Text>}
+      <Input
+        placeholder="Lastname"
+        onChangeText={(value: string) => rootStore.setLastname(value)}
+      />
+      <Input
+        placeholder="Birth year"
+        onChangeText={(value: string) =>
+          rootStore.setBirthYear(parseInt(value, 10))
+        }
+      />
+      {!rootStore.isValid ? (
+        <Text>You informations are not valid.</Text>
+      ) : (
+        <>
+          <Text>
+            Hi, {rootStore.firstname} {rootStore.lastname}!
+          </Text>
+          <Text>
+            Now I know that you&apos;re approximately {rootStore.age} years old.
+          </Text>
+        </>
+      )}
     </Page>
   );
 });
