@@ -1,5 +1,5 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react-native';
+import { storiesOf } from '@storybook/react-native/dist';
 import { View, Text, ViewStyle } from 'react-native';
 
 const style = {
