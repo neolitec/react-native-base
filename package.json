@@ -63,7 +63,7 @@
   },
   "dependencies": {
     "@react-native-community/masked-view": "^0.1.6",
-    "@react-navigation/native": "^5.0.3",
+    "@react-navigation/native": "^5.0.5",
     "@react-navigation/stack": "^5.0.3",
     "@storybook/react-native": "^5.3.12",
     "ky": "^0.17.0",
