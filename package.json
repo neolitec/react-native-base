@@ -1,12 +1,12 @@
 {
-  "name": "react-native-base",
+  "name": "ReactNativeBase",
   "version": "0.0.1",
   "private": true,
   "scripts": {
     "android": "react-native run-android",
     "clean-all": "watchman watch-del-all && rm -rf node_modules/ && npm cache clean --force && npm install",
     "generate:icon": "react-native set-icon --path ./src/assets/icon.png  --background '#fff'",
-    "generate:splash": "react-native set-splash --path ./src/assets/icon.png  --background '#fff' --resize center",
+    "generate:splash": "react-native set-splash --path ./src/assets/splash.png  --background '#fff' --resize center",
     "ios": "react-native run-ios",
     "lint": "eslint \"./{src,__tests__}/**/*.{ts,tsx}\"",
     "start": "react-native start",
