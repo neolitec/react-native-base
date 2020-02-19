@@ -6,8 +6,9 @@
 - [x] Store (mobx)
 - [x] Styles (styled-components)
 - [x] Storybook
-- [ ] Snapshot tests with Storybook
-- [ ] HTTP client (axios, ...)
+- [x] Snapshot tests with Storybook
+- [x] HTTP client (axios, ...)
+- [ ] Translations
 - [ ] Web engine choice (Hermes beta?)
 - [ ] Icon and splashscreen generation
 - [ ] Custom font
