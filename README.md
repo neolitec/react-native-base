@@ -10,8 +10,9 @@
 - [x] HTTP client (axios, ...)
 - [ ] Translations
 - [ ] Web engine choice (Hermes beta?)
-- [ ] Icon and splashscreen generation
+- [x] Icon and splashscreen generation
 - [ ] Custom font
+- [x] Log into Reactotron
 
 ## Storybook
 

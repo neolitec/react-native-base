@@ -58,7 +58,7 @@
       "**/__tests__/**/?(*.)+(spec|test).[jt]s?(x)"
     ],
     "transformIgnorePatterns": [
-      "node_modules/(?!((jest-)?react-native|react-navigation|@react-navigation|@react-native-community|@sentry/react-native/.*))"
+      "node_modules/(?!((jest-)?react-native|react-navigation|@react-navigation|@react-native-community|react-native-jest-mocks|@sentry/react-native/.*))"
     ]
   },
   "dependencies": {

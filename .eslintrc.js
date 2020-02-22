@@ -33,6 +33,7 @@ module.exports = {
     'import/prefer-default-export': 'off',
     'class-methods-use-this': 'off',
     'object-curly-spacing': 'error',
+    'no-useless-constructor': 'off',
 
     // TypeScript
     '@typescript-eslint/camelcase': 'off',
@@ -43,6 +44,7 @@ module.exports = {
     '@typescript-eslint/no-object-literal-type-assertion': 'off',
     '@typescript-eslint/prefer-interface': 'off',
     '@typescript-eslint/no-empty-function': 'off',
+    '@typescript-eslint/no-useless-constructor': 'error',
 
     // React
     'react/jsx-filename-extension': ['error', { extensions: ['.tsx'] }],
