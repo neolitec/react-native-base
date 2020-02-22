@@ -13,6 +13,9 @@
 - [x] Icon and splashscreen generation
 - [ ] Custom font
 - [x] Log into Reactotron
+- Utility hooks
+  - [ ] react-navigaton hooks (did-focus, will-blur)
+  - [ ] mobx hooks (useAutorun, useReaction, ...)
 
 ## Storybook
 
