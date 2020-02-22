@@ -116,6 +116,6 @@
     "metro-react-native-babel-preset": "^0.58.0",
     "react-test-renderer": "16.12.0",
     "sort-package-json": "^1.40.0",
-    "typescript": "^3.7.3"
+    "typescript": "^3.8.2"
   }
 }
