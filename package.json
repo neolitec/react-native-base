@@ -64,7 +64,7 @@
   "dependencies": {
     "@react-native-community/async-storage": "^1.8.0",
     "@react-native-community/masked-view": "^0.1.6",
-    "@react-navigation/native": "^5.0.6",
+    "@react-navigation/native": "^5.0.8",
     "@react-navigation/stack": "^5.0.9",
     "@storybook/react-native": "^5.3.12",
     "ky": "^0.17.0",
