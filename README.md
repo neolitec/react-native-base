@@ -8,7 +8,7 @@
 - [x] Storybook
 - [x] Snapshot tests with Storybook
 - [x] HTTP client (axios, ...)
-- [ ] Translations
+- [x] Translations
 - [ ] Web engine choice (Hermes beta?)
 - [x] Icon and splashscreen generation
 - [ ] Custom font

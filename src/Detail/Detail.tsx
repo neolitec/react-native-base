@@ -2,8 +2,9 @@ import React from 'react';
 import { observer } from 'mobx-react-lite';
 import styled from 'styled-components/native';
 
-import { Text } from 'react-native';
+import { Text, Picker } from 'react-native';
 import { useRootStore } from '../shared/store';
+import { useI18n } from '../shared/lib/i18n/localization';
 
 const Page = styled.View`
   flex: 1;
@@ -19,37 +20,55 @@ const Input = styled.TextInput`
 `;
 
 export const DetailScreen = observer(() => {
-  const rootStore = useRootStore();
+  const { detailStore, i18nStore } = useRootStore();
+  const { tr, setLanguage } = useI18n();
 
   return (
     <Page>
-      <Text>Detail Screen</Text>
+      <Text>
+        {tr('Language')}: {i18nStore.language.languageTag}
+      </Text>
       <Input
-        placeholder="Firstname"
-        onChangeText={(value: string) => rootStore.setFirstname(value)}
+        placeholder={tr('Firstname')}
+        onChangeText={(value: string) => detailStore.setFirstname(value)}
       />
       <Input
-        placeholder="Lastname"
-        onChangeText={(value: string) => rootStore.setLastname(value)}
+        placeholder={tr('Lastname')}
+        onChangeText={(value: string) => detailStore.setLastname(value)}
       />
       <Input
-        placeholder="Birth year"
+        placeholder={tr('Birth year')}
         onChangeText={(value: string) =>
-          rootStore.setBirthYear(parseInt(value, 10))
+          detailStore.setBirthYear(parseInt(value, 10))
         }
       />
-      {!rootStore.isValid ? (
-        <Text>You informations are not valid.</Text>
+      {!detailStore.isValid ? (
+        <Text>{tr('Your informations are not valid.')}</Text>
       ) : (
         <>
           <Text>
-            Hi, {rootStore.firstname} {rootStore.lastname}!
+            {tr('Hi, {{firstname}} {{lastname}}!', {
+              firstname: detailStore.firstname,
+              lastname: detailStore.lastname,
+            })}
           </Text>
           <Text>
-            Now I know that you&apos;re approximately {rootStore.age} years old.
+            {tr("Now I know that you're approximately {{age}} years old", {
+              age: detailStore.age,
+            })}
           </Text>
         </>
       )}
+      <Picker
+        style={{ width: '50%' }}
+        selectedValue={i18nStore.language.languageTag}
+        onValueChange={itemValue => {
+          console.log(`Picker change lang ${itemValue}`);
+          setLanguage({ languageTag: itemValue });
+        }}>
+        <Picker.Item label="French" value="fr" />
+        <Picker.Item label="English" value="en" />
+      </Picker>
     </Page>
   );
 });

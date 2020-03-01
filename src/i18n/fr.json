@@ -1,0 +1,11 @@
+{
+  "Go to Details": "Aller aux Détails",
+  "Firstname": "Prénom",
+  "Lastname": "Nom",
+  "Birth year": "Année de naissance",
+  "See Your Changes": "Voir les changements",
+  "Hi, {{firstname}} {{lastname}}!": "Salut {{firstname}} {{lastname}}!",
+  "Now I know that you're approximately {{age}} years old.": "Maintenant je sais que tu as à peu près {{age}} ans.",
+  "Your informations are not valid.": "Tes informations ne sont pas valides.",
+  "Language": "Langue"
+}

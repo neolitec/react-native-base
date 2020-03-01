@@ -1,11 +1,13 @@
 import React, { useEffect } from 'react';
 import SplashScreen from 'react-native-splash-screen';
+import { autorun } from 'mobx';
 import IdleTimerManager from 'react-native-idle-timer';
 import AppNavigator from './shared/AppNavigator';
 import RootStore from './shared/store/root-store';
 import { rootStoreContext } from './shared/store';
 import Reactotron from './reactotron';
 import StorybookUIRoot from './storybook';
+import { useConfigureI18n } from './shared/lib/i18n/localization';
 import { getLogger } from './shared/lib/reactotron/logger';
 
 const RootStoreProvider = rootStoreContext.Provider;
@@ -15,11 +17,24 @@ const logger = getLogger('App');
 function App() {
   const rootStore = RootStore.create();
 
-  useEffect(() => {
-    // The splash screen continues to be displayed until this method is called.
-    SplashScreen.hide();
-    logger.log('Ready');
-  }, []);
+  useConfigureI18n(rootStore);
+
+  useEffect(
+    () =>
+      autorun(
+        () => {
+          if (rootStore.i18nStore.ready) {
+            console.log('i18n ready');
+            // The splash screen continues to be displayed until this method is called.
+            SplashScreen.hide();
+          }
+        },
+        {
+          name: 'app-ready',
+        },
+      ),
+    [],
+  );
 
   useEffect(() => {
     if (__DEV__) IdleTimerManager.setIdleTimerDisabled(true);
@@ -36,6 +51,6 @@ function App() {
   );
 }
 
-export default (__DEV__
+export default __DEV__
   ? Reactotron.storybookSwitcher(StorybookUIRoot)(App)
-  : App);
+  : App;

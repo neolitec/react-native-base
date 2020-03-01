@@ -1,0 +1,11 @@
+{
+  "Go to Details": "Go to Details",
+  "Firstname": "Firstname",
+  "Lastname": "Lastname",
+  "Birth year": "Birth year",
+  "See Your Changes": "See Your Changes",
+  "Hi, {{firstname}} {{lastname}}!": "Hi, {{firstname}} {{lastname}}!",
+  "Now I know that you're approximately {{age}} years old": "Now I know that you&apos;re approximately {{age}} years old.",
+  "Your informations are not valid": "Your informations are not valid.",
+  "Language": "Language"
+}

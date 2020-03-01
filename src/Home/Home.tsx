@@ -18,6 +18,7 @@ import {
 } from 'react-native/Libraries/NewAppScreen';
 import { StackNavigationProp } from '@react-navigation/stack';
 import { metrics, colors } from '../shared/theme';
+import { useI18n } from '../shared/lib/i18n/localization';
 
 // Criss tabarnak c'est quoi ce truuuc...
 const styles = StyleSheet.create({
@@ -49,10 +50,11 @@ type HomeScreenNavigationProp = StackNavigationProp<StackParamList>;
 
 export function HomeScreen() {
   const navigation = useNavigation<HomeScreenNavigationProp>();
+  const { tr } = useI18n();
 
   return (
     <>
-      <StatusBar barStyle="dark-content" />
+      <StatusBar />
       <SafeAreaView>
         <ScrollView
           contentInsetAdjustmentBehavior="automatic"
@@ -61,12 +63,12 @@ export function HomeScreen() {
           <View style={styles.body}>
             <View style={styles.sectionContainer}>
               <Button
-                title="Go to Details"
+                title={tr('Go to Details')}
                 onPress={() => navigation.navigate('Detail')}
               />
             </View>
             <View style={styles.sectionContainer}>
-              <Text style={styles.sectionTitle}>See Your Changes</Text>
+              <Text style={styles.sectionTitle}>{tr('See Your Changes')}</Text>
               <Text style={styles.sectionDescription}>
                 <ReloadInstructions />
               </Text>
