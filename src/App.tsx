@@ -24,9 +24,9 @@ function App() {
       autorun(
         () => {
           if (rootStore.i18nStore.ready) {
-            console.log('i18n ready');
             // The splash screen continues to be displayed until this method is called.
             SplashScreen.hide();
+            logger.log('Ready');
           }
         },
         {

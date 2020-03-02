@@ -63,7 +63,6 @@ export const DetailScreen = observer(() => {
         style={{ width: '50%' }}
         selectedValue={i18nStore.language.languageTag}
         onValueChange={itemValue => {
-          console.log(`Picker change lang ${itemValue}`);
           setLanguage({ languageTag: itemValue });
         }}>
         <Picker.Item label="French" value="fr" />

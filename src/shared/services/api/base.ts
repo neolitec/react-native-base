@@ -5,12 +5,12 @@ type Url = string;
 type Options = object;
 
 export interface ApiClient {
-  get(url: Url, options?: Options): Promise<any>;
-  post(url: Url, options?: Options): Promise<any>;
-  put(url: Url, options?: Options): Promise<any>;
-  patch(url: Url, options?: Options): Promise<any>;
-  delete(url: Url, options?: Options): Promise<any>;
-  head(url: Url, options?: Options): Promise<any>;
+  get(url: Url, options?: Options): Promise<unknown>;
+  post(url: Url, options?: Options): Promise<unknown>;
+  put(url: Url, options?: Options): Promise<unknown>;
+  patch(url: Url, options?: Options): Promise<unknown>;
+  delete(url: Url, options?: Options): Promise<unknown>;
+  head(url: Url, options?: Options): Promise<unknown>;
 }
 const appVersion = DeviceInfo.getReadableVersion();
 const bundleId = DeviceInfo.getBundleId();
