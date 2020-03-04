@@ -67,7 +67,7 @@
     "@react-navigation/native": "^5.0.8",
     "@react-navigation/stack": "^5.1.0",
     "@storybook/react-native": "^5.3.12",
-    "ky": "^0.17.0",
+    "ky": "^0.18.0",
     "lodash.memoize": "^4.1.2",
     "mobx": "^4.15.4",
     "mobx-react-lite": "^1.5.2",
